@@ -18,37 +18,37 @@ class Root extends Component {
     let {isLoginPending, isLoginSuccess, loginError} = this.props;
     return (
         <form name="loginForm" onSubmit={this.onSubmit}>
-          <div id="loginForm">
-            <div class="row">
-              <div className="form-group">
-                <label>Email:</label>
-                <input type="email" name="email" onChange={e => this.setState({email: e.target.value})} value={email}/>
-              </div>
-            </div>
-
-            <div class="row">
-              <div className="form-group">
-                <label>Password:</label>
-                <input type="password" name="password" onChange={e => this.setState({password: e.target.value})} value={password}/>
-              </div>
-            </div>
-
-            <div class="row">
-              <input type="submit" value="Login" />
-            </div>
-            
-            <div class="row">
-              <div className="message">
-                { isLoginPending && <div class="alert alert-info" role="alert">Please wait...</div> }
-                { isLoginSuccess && <div class="alert alert-success" role="alert">Success.</div> }
-                { loginError && <div class="alert alert-danger" role="alert">{loginError.message}</div> }
-              </div>
+        <div id="loginForm">
+          <div class="row">
+            <div>
+              <label>Email:</label>
+              <input type="email" name="email" onChange={e => this.setState({email: e.target.value})} value={email}/>
             </div>
           </div>
-          <div>
-          { isLoginSuccess && <Home /> }
+          <br />
+          <div class="row">
+            <div>
+              <label>Password:</label>
+              <input type="password" name="password" onChange={e => this.setState({password: e.target.value})} value={password}/>
+            </div>
           </div>
-        </form>
+          <br />
+          <div class="row">
+            <input type="submit" value="Login" />
+          </div>
+          
+          <div class="row">
+            <div className="message">
+              { isLoginPending && <div class="alert alert-info" role="alert">Please wait...</div> }
+              { isLoginSuccess && <div class="alert alert-success" role="alert">Success.</div> }
+              { loginError && <div class="alert alert-danger" role="alert">{loginError.message}</div> }
+            </div>
+          </div>
+        </div>
+        <div>
+        { isLoginSuccess && <Home /> }
+        </div>
+      </form>
     )
   }
 
