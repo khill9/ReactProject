@@ -30,6 +30,9 @@ class Home extends Component {
             });
           }
         )
+      // Hide Login Portion once authenticated
+      var loginForm = document.getElementById("loginForm");
+      loginForm.style.display = "none";
     }
 
     render() {
