@@ -1,0 +1,9 @@
+#well {
+    background-color: lightgrey;
+    padding: 10px;
+  }
+
+.label {
+    font-size: 1em;
+    font-weight: bold;
+}

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import PersonalInfo from './PersonalInfo';
 
 class Home extends Component {
 
@@ -9,7 +9,7 @@ class Home extends Component {
       this.state = {
         error: null,
         isLoaded: false,
-        items: []
+        user: []
       };
     }
 
@@ -20,12 +20,9 @@ class Home extends Component {
             (result) => {
               this.setState({
                 isLoaded: true,
-                items: result.results[0]
+                user: result.results[0]
               });
             },
-            // Note: it's important to handle errors here
-            // instead of a catch() block so that we don't swallow
-            // exceptions from actual bugs in components.
            (error) => {
               this.setState({
               isLoaded: true,
@@ -36,16 +33,14 @@ class Home extends Component {
     }
 
     render() {
-        const { error, isLoaded, items } = this.state;
+        const { error, isLoaded, user } = this.state;
         if (error) {
           return <div>Error: {error.message}</div>;
         } else if (!isLoaded) {
           return <div>Loading...</div>;
         } else {
           return (
-            <ul>
-                {items}
-            </ul>
+            <PersonalInfo  user={user}/>
           );
         }
       }
