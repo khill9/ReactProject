@@ -4,7 +4,6 @@ import { login } from '../redux/reducer';
 import './Root.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './Home';
-import { unmountComponentAtNode } from 'react-dom';
 
 class Root extends Component {
 

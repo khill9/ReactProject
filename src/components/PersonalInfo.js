@@ -5,7 +5,7 @@ import './PersonalInfo.css';
 class PersonalInfo extends Component {
 
     render() {
-      const isFemale = this.props.user.gender == "female";
+      const isFemale = this.props.user.gender === "female";
           return (
             <div id="well">
               <div class="row">
