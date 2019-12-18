@@ -32,7 +32,7 @@ class Loading extends React.Component {
 
     render(){
        return(
-        <div class="body">
+        <div class="loader">
             {this.state.loading ? (
             <ReactLoading type={"bars"} color={"black"} />
             ) : (

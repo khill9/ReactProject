@@ -19,30 +19,22 @@ class Root extends Component {
     return (
         <form name="loginForm" onSubmit={this.onSubmit}>
         <div id="loginForm">
-          <div class="row">
-            <div>
-              <label>Email:</label>
-              <input type="email" name="email" onChange={e => this.setState({email: e.target.value})} value={email}/>
-            </div>
+          <div class="wrap-input100">
+            <input class="input100" type="email" name="email" placeholder="Enter your email." onChange={e => this.setState({ email: e.target.value })} value={email} />
+            <span class="focus-input100"></span>
           </div>
+          <div class="wrap-input100">
+            <input class="input100" type="password" name="password" placeholder="Enter your password." onChange={e => this.setState({password: e.target.value})} value={password}/>
+            <span class="focus-input100"></span>
+          </div>
+
           <br />
-          <div class="row">
-            <div>
-              <label>Password:</label>
-              <input type="password" name="password" onChange={e => this.setState({password: e.target.value})} value={password}/>
-            </div>
-          </div>
-          <br />
-          <div class="row">
-            <input type="submit" value="Login" />
-          </div>
+          <input type="submit" class="submitBtn" value="Login" />
           
-          <div class="row">
-            <div className="message">
-              { isLoginPending && <div class="alert alert-info" role="alert">Please wait...</div> }
-              { isLoginSuccess && <div class="alert alert-success" role="alert">Success.</div> }
-              { loginError && <div class="alert alert-danger" role="alert">{loginError.message}</div> }
-            </div>
+          <div className="message">
+            { isLoginPending && <div class="alert alert-info" role="alert">Please wait...</div> }
+            { isLoginSuccess && <div class="alert alert-success" role="alert">Success.</div> }
+            { loginError && <div class="alert alert-danger" role="alert">{loginError.message}</div> }
           </div>
         </div>
         <div>

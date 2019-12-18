@@ -1,36 +1,158 @@
-  .form-group {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 10px;
-  }
-  
-  label {
-    min-width: 180px;
-    width: 180px;
-    font-weight: bold;
-    font-size: 25px;
-  }
-  
-  input[type="email"], input[type="password"] {
+@font-face {
+  font-family: 'Dosis', sans-serif;
+  src: url(https://fonts.googleapis.com/css?family=Dosis&display=swap)
+}
+
+input {
+  outline: none;
+  border: none
+}
+
+input:focus::-webkit-input-placeholder {
+  color: transparent
+}
+
+input:focus:-moz-placeholder {
+  color: transparent
+}
+
+input:focus::-moz-placeholder {
+  color: transparent
+}
+
+input:focus:-ms-input-placeholder {
+  color: transparent
+}
+
+input::-webkit-input-placeholder {
+  color: #adadad
+}
+
+input:-moz-placeholder {
+  color: #adadad
+}
+
+input::-moz-placeholder {
+  color: #adadad
+}
+
+input:-ms-input-placeholder {
+  color: #adadad
+}
+
+button {
+  outline: none!important;
+  border: none;
+  background: transparent
+}
+
+button:hover {
+  cursor: pointer
+}
+
+.wrap-input100 {
+  width: 100%;
+  position: relative;
+  border-bottom: 2px solid #d9d9d9;
+  padding-bottom: 13px;
+  margin-bottom: 27px
+}
+
+.label-input100 {
+  font-family: 'Dosis', sans-serif;
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+  padding-left: 5px
+}
+
+.input100 {
+  display: block;
+  width: 100%;
+  background: transparent;
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
+  color: #333;
+  line-height: 1.2;
+  padding: 0 5px
+}
+
+.focus-input100 {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none
+}
+
+.focus-input100::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  -webkit-transition: all .4s;
+  -o-transition: all .4s;
+  -moz-transition: all .4s;
+  transition: all .4s;
+  background: #7f7f7f
+}
+
+input.input100 {
+  height: 40px
+}
+
+.input100:focus+.focus-input100::before {
+  width: 100%
+}
+
+.has-val.input100+.focus-input100::before {
+  width: 100%
+}
+
+
+#loginForm {
+  padding: 30px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
+.submitBtn {
+    display:inline-block;
+    padding:0.3em 1.2em;
+    margin:0 0.3em 0.3em 0;
+    border-radius:2em;
     box-sizing: border-box;
-    height: 40px;
-    padding: 3px;
-    flex-grow: 1;
-    font-size: 25px;
+    text-decoration:none;
+    font-family: 'Dosis', sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+    background-color:#4eb5f1;
+    text-align:center;
+    transition: all 0.2s;
+  }
+
+.submitBtn:hover {
+    background-color:#4095c6;
+  }
+
+@media all and (max-width:30em){
+    .submitBtn {
+      display:block;
+      margin:0.2em auto;
+    }
   }
   
-  input[type="submit"] {
-    align-self: flex-end;
-    width: 100px;
-    height: 50px;
-    border: 3px solid lightgray;
-    border-radius: 5px;
-    font-size: 20px;
-    background: white;
-  }
-  
-  .message {
-    font-size: 25px;
-    margin-top: 10px;
-    text-align: right;
-  }
+.message {
+  font-size: 25px;
+  margin-top: 10px;
+  text-align: right;
+}
