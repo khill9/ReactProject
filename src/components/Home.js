@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PersonalInfo from './PersonalInfo';
+import ReactLoading from "react-loading";
+import './Loading.css';
 
 class Home extends Component {
 
@@ -18,10 +20,12 @@ class Home extends Component {
           .then(res => res.json())
           .then(
             (result) => {
-              this.setState({
-                isLoaded: true,
-                user: result.results[0]
-              });
+              setTimeout(() => {
+                this.setState({
+                  isLoaded: true,
+                  user: result.results[0]
+                });
+              }, 3000);
             },
            (error) => {
               this.setState({
@@ -38,9 +42,9 @@ class Home extends Component {
     render() {
         const { error, isLoaded, user } = this.state;
         if (error) {
-          return <div>Error: {error.message}</div>;
+          return <div class="alert alert-danger" role="alert">Error: {error.message}</div>;
         } else if (!isLoaded) {
-          return <div>Loading...</div>;
+          return <div class="loader"><ReactLoading type={"cylon"} color={"black"} /></div>;
         } else {
           return (
             <PersonalInfo  user={user}/>

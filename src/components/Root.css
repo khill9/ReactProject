@@ -25,19 +25,19 @@ input:focus:-ms-input-placeholder {
 }
 
 input::-webkit-input-placeholder {
-  color: #adadad
+  color: #686868
 }
 
 input:-moz-placeholder {
-  color: #adadad
+  color: #686868
 }
 
 input::-moz-placeholder {
-  color: #adadad
+  color: #686868
 }
 
 input:-ms-input-placeholder {
-  color: #adadad
+  color: #686868
 }
 
 button {
@@ -53,7 +53,7 @@ button:hover {
 .wrap-input100 {
   width: 100%;
   position: relative;
-  border-bottom: 2px solid #d9d9d9;
+  border-bottom: 2px solid #e8e8e8;
   padding-bottom: 13px;
   margin-bottom: 27px
 }
@@ -61,7 +61,7 @@ button:hover {
 .label-input100 {
   font-family: 'Dosis', sans-serif;
   font-size: 13px;
-  color: #666;
+  color: #c98b4b;
   line-height: 1.5;
   padding-left: 5px
 }
@@ -72,7 +72,7 @@ button:hover {
   background: transparent;
   font-family: 'Dosis', sans-serif;
   font-size: 18px;
-  color: #333;
+  color: #c98b4b;
   line-height: 1.2;
   padding: 0 5px
 }
@@ -99,7 +99,7 @@ button:hover {
   -o-transition: all .4s;
   -moz-transition: all .4s;
   transition: all .4s;
-  background: #7f7f7f
+  background: #c98b4b
 }
 
 input.input100 {
@@ -113,7 +113,6 @@ input.input100 {
 .has-val.input100+.focus-input100::before {
   width: 100%
 }
-
 
 #loginForm {
   padding: 30px;
@@ -135,13 +134,13 @@ input.input100 {
     font-family: 'Dosis', sans-serif;
     font-weight:300;
     color:#FFFFFF;
-    background-color:#4eb5f1;
+    background-color:#ef9f6c;
     text-align:center;
     transition: all 0.2s;
   }
 
 .submitBtn:hover {
-    background-color:#4095c6;
+    background-color:#c98b4b;
   }
 
 @media all and (max-width:30em){
@@ -150,9 +149,10 @@ input.input100 {
       margin:0.2em auto;
     }
   }
-  
+
 .message {
-  font-size: 25px;
+  display:block;
+  font-size: 13px;
   margin-top: 10px;
-  text-align: right;
+  text-align: center;
 }

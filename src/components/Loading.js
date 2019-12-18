@@ -32,9 +32,9 @@ class Loading extends React.Component {
 
     render(){
        return(
-        <div class="loader">
+        <div className="loadDiv">
             {this.state.loading ? (
-            <ReactLoading type={"bars"} color={"black"} />
+            <div className="loader"><ReactLoading type={"cylon"} color={"black"} /></div>
             ) : (
             <FadeIn>
                 <Root />

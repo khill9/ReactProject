@@ -4,6 +4,19 @@ import { login } from '../redux/reducer';
 import './Root.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './Home';
+import ReactLoading from "react-loading";
+import './Loading.css';
+import Lottie from "react-lottie";
+import * as doneData from "../doneloading.json";
+
+const checkmarkOptions = {
+  loop: false,
+  autoplay: true,
+  animationData: doneData.default,
+  rendererSettings: {
+    preserveAspectRatio: "xMidYMid slice"
+  }
+};
 
 class Root extends Component {
 
@@ -32,7 +45,7 @@ class Root extends Component {
           <input type="submit" class="submitBtn" value="Login" />
           
           <div className="message">
-            { isLoginPending && <div class="alert alert-info" role="alert">Please wait...</div> }
+            { isLoginPending && <div class="loader"><ReactLoading type={"cylon"} color={"black"} /></div>}
             { isLoginSuccess && <div class="alert alert-success" role="alert">Success.</div> }
             { loginError && <div class="alert alert-danger" role="alert">{loginError.message}</div> }
           </div>
