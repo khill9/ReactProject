@@ -48,6 +48,9 @@ function callLoginApi(email, password, callback) {
     } 
     if (email === 'kaylie.hill@regions.com' && password === 'password') {
       return callback(null);
+    } 
+    if (email === 'khill@cgi.com' && password === 'pw') {
+      return callback(null);
     } else {
       return callback(new Error('Invalid email and password'));
     }
