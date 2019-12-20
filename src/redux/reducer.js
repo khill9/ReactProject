@@ -42,24 +42,8 @@ export function fetchProducts(test) {
             dispatch(fetchProductsError(error));
           }
         )
-
-
-
-
-      //fetch('https://randomuser.me/api/')
-      //.then(res => res.json())
-      //.then(res => {
-      //    if(res.error) {
-      //        throw(res.error);
-      //    }
-      //    dispatch(fetchProductsSuccess(res.result.results[0]));
-      //    //return res.result.results[0];
-      //})
-      //.catch(error => {
-      //    dispatch(fetchProductsError(error));
-      //})
+    }
   }
-}
 
 function callLoginApi(email, password, callback) {
   setTimeout(() => {

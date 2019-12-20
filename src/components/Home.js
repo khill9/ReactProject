@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PersonalInfo from './PersonalInfo';
 import ReactLoading from "react-loading";
 import './Loading.css';
-import fetchProductsAction from '../redux/reducer';
 import { fetchProducts } from '../redux/reducer';
 import {getProductsError, getProducts, getProductsPending} from '../redux/reducer';
 
@@ -38,32 +36,6 @@ class Home extends Component {
       return true;
   }
 
-    //componentDidMount() {
-      /*
-        fetch("https://randomuser.me/api/")
-          .then(res => res.json())
-          .then(
-            (result) => {
-              setTimeout(() => {
-                this.setState({
-                  isLoaded: true,
-                  user: result.results[0]
-                });
-              }, 3000);
-            },
-           (error) => {
-              this.setState({
-              isLoaded: true,
-              error
-            });
-          }
-        )
-        */
-       //this.props.fetchProducts();
-
-      
-    //}
-
     render() {
         const { error, user } = this.state;
         if (error) {
@@ -76,17 +48,13 @@ class Home extends Component {
           );
         }
       }
-}
+  } 
 
 const mapStateToProps = (state) => ({
   error: getProductsError(state),
   products: getProducts(state),
   pending: getProductsPending(state)
 })
-
-//const mapDispatchToProps = (dispatch) => bindActionCreators({
-  //fetchProducts: fetchProductsAction
-//}, dispatch)
 
 const mapDispatchToProps = (dispatch) => {
   return {

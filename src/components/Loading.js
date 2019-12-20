@@ -5,16 +5,6 @@ import ReactLoading from "react-loading";
 import "bootstrap/dist/css/bootstrap.css";
 import Root from './Root';
 import './Loading.css';
-import * as doneData from "../doneloading.json";
-
-const defaultOptions = {
-    loop: false,
-    autoplay: true,
-    animationData: doneData.default,
-    rendererSettings: {
-       preserveAspectRatio: "xMidYMid slice"
-    }
- };
 
 class Loading extends React.Component {
     constructor(props) {

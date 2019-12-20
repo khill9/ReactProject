@@ -6,17 +6,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './Home';
 import ReactLoading from "react-loading";
 import './Loading.css';
-import Lottie from "react-lottie";
-import * as doneData from "../doneloading.json";
-
-const checkmarkOptions = {
-  loop: false,
-  autoplay: true,
-  animationData: doneData.default,
-  rendererSettings: {
-    preserveAspectRatio: "xMidYMid slice"
-  }
-};
 
 class Root extends Component {
 
