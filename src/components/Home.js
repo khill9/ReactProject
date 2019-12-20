@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import PersonalInfo from './PersonalInfo';
+import Users from './Users';
 import ReactLoading from "react-loading";
 import './Loading.css';
 import { fetchUsers } from '../redux/reducer';
 import {getUsersError, getUsers, getUsersPending} from '../redux/reducer';
+import Card from './Card';
 
 
 class Home extends Component {
@@ -44,7 +45,7 @@ class Home extends Component {
           return <div class="loader"><ReactLoading type={"cylon"} color={"black"} /></div>
         } else {
           return (
-            <PersonalInfo  users={this.props.users}/>
+            <Users  users={this.props.users}/>
           );
         }
       }

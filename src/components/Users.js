@@ -1,8 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './PersonalInfo.css';
+import './Users.css';
+import Card from './Card';
 
-class PersonalInfo extends Component {
+class Users extends Component {
 
     render() {
       const listOfUsers = this.props.users.slice(1, 10).map((user) =>
@@ -22,10 +23,11 @@ class PersonalInfo extends Component {
               <h2>Welcome!</h2>
               <br />
               <div>{listOfUsers}</div>
+              <Card />
             </Fragment>
             );
         }
 }
 
 
-export default PersonalInfo
+export default Users
