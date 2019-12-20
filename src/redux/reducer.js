@@ -27,19 +27,17 @@ export function login(email, password) {
 export function fetchProducts(test) {
   return dispatch => {
       dispatch(fetchProductsPending());
-      fetch("https://randomuser.me/api/")
+      //fetch("https://randomuser.me/api/")
+      fetch("http://dummy.restapiexample.com/api/v1/employees")
           .then(result => result.json())
           .then(
             (result) => {
-              dispatch(fetchProductsSuccess(result.results[0]));
-              return result.results[0];
+              dispatch(fetchProductsSuccess(result[5]));
+              return result[5];
             },
            (error) => {
-              this.setState({
-                pending: false,
-              error
-            });
             dispatch(fetchProductsError(error));
+            return error;
           }
         )
     }
