@@ -6,8 +6,6 @@ import ReactLoading from "react-loading";
 import './Loading.css';
 import { fetchUsers } from '../redux/reducer';
 import {getUsersError, getUsers, getUsersPending} from '../redux/reducer';
-import Card from './Card';
-
 
 class Home extends Component {
 
