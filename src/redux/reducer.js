@@ -33,8 +33,6 @@ export function fetchUsers(test) {
           .then(result => result.json())
           .then(
             (result) => {
-              //dispatch(fetchUsersSuccess(result[5]));
-              //return result[5];
               dispatch(fetchUsersSuccess(result));
               return result;
             },

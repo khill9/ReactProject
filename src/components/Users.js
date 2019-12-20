@@ -9,11 +9,7 @@ class Users extends Component {
       const listOfUsers = this.props.users.slice(1, 10).map((user) =>
       <div>
         <div class="row">
-          <div class="card">
-            <h1>{user.employee_name}</h1>
-            <p classname="title">Salary: {user.employee_salary}</p>
-            <p>Age: {user.employee_age}</p>
-          </div>
+          <Card user={user}/>
         </div>
         <br />
       </div>
@@ -23,7 +19,6 @@ class Users extends Component {
               <h2>Welcome!</h2>
               <br />
               <div>{listOfUsers}</div>
-              <Card />
             </Fragment>
             );
         }
