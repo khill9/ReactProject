@@ -1,37 +1,28 @@
 import React, { Component, Fragment } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './PersonalInfo.css';
-import Card from './Card';
 
 class PersonalInfo extends Component {
 
     render() {
-      //const isFemale = this.props.user.gender === "female";
+      const listOfUsers = this.props.users.slice(1, 10).map((user) =>
+      <div>
+        <div class="row">
+          <div class="card">
+            <h1>{user.employee_name}</h1>
+            <p classname="title">Salary: {user.employee_salary}</p>
+            <p>Age: {user.employee_age}</p>
+          </div>
+        </div>
+        <br />
+      </div>
+      );
           return (
-            /*<Fragment>
-              <div class="row">
-                <div class="col-md-5">
-                  <div class="card">
-                    {isFemale ? (<div><img src="https://randomuser.me/api/portraits/thumb/women/2.jpg" alt="userImage"/></div>)
-                      :
-                      (<div><img src="https://randomuser.me/api/portraits/thumb/men/33.jpg" alt="userImage"/></div>)}
-                      <h1>{this.props.user.name.first} {this.props.user.name.last}</h1>
-                      <p class="title">CEO & Founder, Example</p>
-                      <p>Phone Number: {this.props.user.cell}</p>
-                  </div>
-                </div>
-              </div>
-              <Card />
-            </Fragment>*/
-            <div class="row">
-                <div class="col-md-5">
-                  <div class="card">
-                      <h1>{this.props.user.employee_name}</h1>
-                      <p class="title">CEO & Founder, Example</p>
-                      <p>Phone Number: {this.props.user.employee_salary}</p>
-                  </div>
-                </div>
-              </div>
+            <Fragment>
+              <h2>Welcome!</h2>
+              <br />
+              <div>{listOfUsers}</div>
+            </Fragment>
             );
         }
 }

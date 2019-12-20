@@ -4,8 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import PersonalInfo from './PersonalInfo';
 import ReactLoading from "react-loading";
 import './Loading.css';
-import { fetchProducts } from '../redux/reducer';
-import {getProductsError, getProducts, getProductsPending} from '../redux/reducer';
+import { fetchUsers } from '../redux/reducer';
+import {getUsersError, getUsers, getUsersPending} from '../redux/reducer';
 
 
 class Home extends Component {
@@ -15,14 +15,14 @@ class Home extends Component {
       this.state = {
         error: null,
         pending: false,
-        products: []
+        users: []
       };
       this.shouldComponentRender = this.shouldComponentRender.bind(this);
     }
 
     componentWillMount() {
-      const {fetchProducts} = this.props;
-      fetchProducts();
+      const {fetchUsers} = this.props;
+      fetchUsers();
 
       // Hide Login Portion once authenticated
       var loginForm = document.getElementById("loginForm");
@@ -40,25 +40,25 @@ class Home extends Component {
         const { error, user } = this.state;
         if (error) {
           return <div class="alert alert-danger" role="alert">Error: {error.message}</div>;
-        } else if(this.props.products == undefined){
+        } else if(this.props.users == undefined){
           return <div class="loader"><ReactLoading type={"cylon"} color={"black"} /></div>
         } else {
           return (
-            <PersonalInfo  user={this.props.products}/>
+            <PersonalInfo  users={this.props.users}/>
           );
         }
       }
   } 
 
 const mapStateToProps = (state) => ({
-  error: getProductsError(state),
-  products: getProducts(state),
-  pending: getProductsPending(state)
+  error: getUsersError(state),
+  users: getUsers(state),
+  pending: getUsersPending(state)
 })
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchProducts: (test) => dispatch(fetchProducts("test"))
+    fetchUsers: (test) => dispatch(fetchUsers("test"))
   };
 }
 
